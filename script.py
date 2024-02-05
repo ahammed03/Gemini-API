@@ -5,13 +5,9 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv('API_KEY')
 import google.generativeai as genai
 genai.configure(api_key=GOOGLE_API_KEY)
-# for m in genai.list_models():
-#   if 'generateContent' in m.supported_generation_methods:
-#     print(m.name)
+
 model = genai.GenerativeModel('gemini-pro')
 
-# # response = model.generate_content("What is the meaning of life?")
-# # print(response)
 def startConversation():
     user_msg = input("Prompt : ")
     if user_msg == "0":
